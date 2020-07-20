@@ -12,9 +12,11 @@
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script type="text/babel">
   const appRoot = document.querySelector('#application-root');
-  ReactDOM.render(App(),appRoot);
+  const nameProp = {name: "Joe"}
 
-  function App() {
+  ReactDOM.render(App(nameProp),appRoot);
+
+  function App(props) {
     return <div>
         <header>
           <div id="img">
@@ -24,7 +26,7 @@
         </header>
         <main>
           <section id="introduction">
-              <p>Hi I'm Sally I'm 25 and below this line you'll find more information about me.</p>
+              <p>Hi I'm {props.name} I'm 25 and below this line you'll find more information about me.</p>
           </section>
           <br/>
           <section id="Education">
